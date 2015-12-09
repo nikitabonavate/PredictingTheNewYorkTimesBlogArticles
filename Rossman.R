@@ -99,5 +99,16 @@ write.csv(submission_file, "Reg1.csv")
 
 
 
+mtrain = mtrain[, -c(19:21)]
+mtest = mtest[, -c(19:21)]
+
+
+library(randomForest)
+RF2 = randomForest(Sales ~ ., data = train, ntree=170, imp=TRUE, sampsize=10000, do.trace=TRUE)
+
+
+
+
+
 
 
